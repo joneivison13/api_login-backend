@@ -38,7 +38,7 @@ module.exports = {
         name: name || "",
         document: document || "",
         lastname: lastname || "",
-        rg_uri: req.file?.filename || "",
+        rg_uri: req.file.filename || "",
       });
 
       return res.json({
@@ -96,7 +96,7 @@ module.exports = {
           name: name || "",
           document: document || "",
           lastname: lastname || "",
-          rg_uri: req.file?.filename || "",
+          rg_uri: req.file.filename || "",
         })
         .where({ id: req.params.id });
 
@@ -134,8 +134,8 @@ module.exports = {
         data: {
           ...data[0],
           rg_uri:
-            data[0]?.rg_uri?.length >= 1
-              ? `${process.env.UPLOAD_URL}/${data[0]?.rg_uri}`
+            data[0].rg_uri.length >= 1
+              ? `${process.env.UPLOAD_URL}/${data[0].rg_uri}`
               : undefined,
         },
       });
